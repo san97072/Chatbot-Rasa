@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot Scuola</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        :root{
+            --chat-color: #bdbdbd;
+            --chat-text-color: #222;
+            --button-size: 56px;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+"Helvetica Neue", Arial;
+        }
+        .chat-sign-button{
+            width: var(--button-size);
+            height: var(--button-size);
+            padding: 0;
+            border: none;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--chat-color);
+            color: var(--chat-text-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-radius: 50%;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .chat-sign-button img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+        }
+        #chat-widget{
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        #chat-widget .card-header{
+            background-color: var(--chat-color);
+            color: var(--chat-text-color);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        #chat-widget .card-footer{
+            background-color: #f7f7f7;
+        }
+        #chat-widget-messages{
+            margin-right: 15px;
+        }
+        #chat-widget .btn-close {
+            filter: none;
+        }
+        @media (max-width: 480px) {
+            :root { --button-size: 48px; }
+            #chat-widget { right: 12px; left: 12px; width: auto; bottom: 90px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot Scuola</h1>
+        <button id="chat-widget-button" type="button" class="chat-sign-button" aria-label="Apri chat">
+            <img src="https://copilot.microsoft.com/th/id/BCO.8e076a71-c0a6-47c0-962c-62d5c6b32992.png" alt="Avatar chat" onerror="this.style.display='none'">
+        </button>
+        <div id="chat-widget" class="card position-fixed shadow d-none" style="bottom: 100px; right: 20px; width: 320px;">
+            <div class="card-header">
+                Chatbot
+                <button id="chat-widget-close-button" type="button" class="btn-close float-end" aria-label="Chiudi"></button>
+            </div>
+            <div class="card-body" id="chat-widget-messages" style="max-height:260px; overflow:auto;"></div>
+            <div class="card-footer">
+                <input type="text" class="form-control" id="chat-widget-input" placeholder="Scrivi un messaggio" aria-label="Scrivi un messaggio">
+            </div>
+        </div>
+    </div>
+<script>
+    $(document).ready(function(){
+        $("#chat-widget-button").on("click", function(){
+            $("#chat-widget").toggleClass("d-none");
+        });
+        $("#chat-widget-close-button").on("click", function() {
+            $("#chat-widget").addClass("d-none");
+        });
+        $("#chat-widget-input").keypress(function(event){
+            if(event.which === 13) {
+                event.preventDefault();
+                let userMessage = $("#chat-widget-input").val().trim();
+                if(!userMessage) return;
+                $("#chat-widget-input").val("");
+                let safeUser = $('<div>').text(userMessage).html();
+
+$("#chat-widget-messages").append("<div><strong>Tu:</strong> " + safeUser + "</div>");
+
+$("#chat-widget-messages").scrollTop($("#chat-widget-messages")[0].scrollHeight);
+                $.ajax({
+                    type: "POST",
+                    url: "/webhook",
+                    contentType: "application/json",
+                    data: JSON.stringify({ message: userMessage }),
+                    success: function(data) {
+                        let botResponse = data && data.response ? data.response : "Nessuna risposta.";
+                        let safeBot = $('<div>').text(botResponse).html();
+
+$("#chat-widget-messages").append("<div><strong>Bot:</strong> " + safeBot + "</div>");
+
+$("#chat-widget-messages").scrollTop($("#chat-widget-messages")[0].scrollHeight);
+                    },
+                    error: function(){
+                        $("#chat-widget-messages").append("<div class='text-muted'><em>Errore nella richiesta al server.</em></div>");
+
+$("#chat-widget-messages").scrollTop($("#chat-widget-messages")[0].scrollHeight);
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
+

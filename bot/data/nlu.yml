@@ -1,0 +1,528 @@
+version: "3.1"
+
+nlu:
+- intent: accoglienza
+  examples: |
+    - hey
+    - ciao
+    - ehi
+    - ehy
+    - hey
+    - buongiorno
+    - buon pomeriggio
+    - buonasera
+    - salve
+
+- intent: chiusura
+  examples: |
+    - arrivederci
+    - addio
+    - alla prossima
+
+- intent: affermazione
+  examples: |
+    - yes
+    - y
+    - esatto
+    - si
+    - affermativo
+
+- intent: negazione
+  examples: |
+    - no
+    - n
+    - errato
+    - no va bene cosi
+    - nessun problema
+    - apposto cosi
+    - sono apposto
+
+- intent: ringraziamento
+  examples: |
+    - grazie
+    - grazie mille
+    - grazie assai
+    - mille grazie
+    - grazie per la disponibilità
+    - grazie per l'informazione
+    - grazie per l'aiuto
+    - tante grazie
+    - thank you
+    - thanks
+    - grazie sei stato di aiuto
+
+
+- intent: informazioni_scuola
+  examples: |
+    - [classi](scuola)
+    - [studenti](scuola)
+    - [numeri](scuola)
+
+- intent: informazioni
+  examples: |
+    - vorrei avere qualche [informazione] sulla (scuola)
+    - vorrei avere qualche [informazione] sull'(istituto)
+    - vorrei avere qualche [informazione] sull'(IIS Bisignano)
+    - vorrei avere qualche [informazione] sull'(IIS Enzo Siciliano)
+    - [informazioni](scuola)
+    - [informazioni](istituto)
+    - [informazioni](IIS Bisignano)
+    - [informazioni](IIS Enzo Siciliano)
+    - vorrei avere più [informazioni] sulla (scuola)
+    - sapresti darmi delle informazioni riguardo la (scuola)
+    - vorrei sapere qualcosa sull'(istituto)
+    - informazioni (scuola)
+    - informazioni (istituto)
+    - mi servirebbero delle [informazioni] sulla (scuola)
+    - desidererei avere maggiori [informazioni] sull'(istituto)
+
+- intent: informazioni_numeri
+  examples: |
+    - quali sono i [numeri] della (scuola)?
+    - quanti [classi] ha la (scuola)?
+    - quanti [studenti] sono iscritti nella (scuola)?
+    - quanti [persone] sono iscritte all'interno dell'(istituto)?
+    - quanti [alunni] ha l'(istituto)?
+    - quanti [studenti] sono iscritti nell'(istituto)?
+    - quanti sono gli [studenti] iscritti in questa (scuola)?
+    - quanti sono gli [studenti] iscritti in questo (istituto)?
+    - quanti [classi] ha l'(istituto)?
+    - qual è il numero di [classi] all'interno dell'(istituto)?
+    - quante [classi] ci sono?
+
+- intent: informazioni_indirizzi
+  examples: |
+    - quali sono gli [indirizzi] della (scuola)?
+    - che [indirizzi] ha la (scuola)?
+    - qual è l'[offerta formativa] che offre la (scuola)?
+    - qual è l'[offerta formativa] della (scuola)?
+    - che [indirizzi] ha l'(istituto)?
+    - che [percorso di studio] offre la (scuola)?
+    - qual è il [percorso di studio]?
+    - qual è il [piano di studio] della (scuola)?
+    - qual è il [piano di studio] dell'(istituto)?
+    - qual è il [piano di studio]?
+
+- intent: info_scientifico
+  examples: |
+    - cosa si studia al [Liceo Scientifico]?
+    - che competenze offre il [liceo scientifico]?
+    - cosa si fa allo [scientifico]?
+    - puoi darmi più informazioni sul [liceo scientifico]?
+    - posso avere informazioni sul [liceo scientifico]?
+    - in cosa consiste lo [scientifico]?
+    - dimmi di più sul [liceo scientifico]
+    - dammi informazioni sullo [scientifico]
+    - fai una breve descrizione del [liceo scientifico]
+    - quali sono le materie che si studiano nel corso di studi del [liceo]?
+
+- intent: info_classico
+  examples: |
+    - cosa si studia al [Liceo CLassico]?
+    - che competenze offre il [liceo classico]?
+    - cosa si fa al [classico]?
+    - puoi darmi più informazioni sul [liceo classico]?
+    - posso avere informazioni sul [liceo classico]?
+    - in cosa consiste il [classico]?
+    - dimmi di più sul [liceo classico]
+    - dammi informazioni sul [classico]
+    - fai una breve descrizione del [liceo classico]
+    - quali sono le materie che si studiano nel corso di studi del [liceo]?
+
+- intent: info_artistico
+  examples: |
+    - cosa si studia al [Liceo Artistico]?
+    - che competenze offre il [liceo artistico]?
+    - cosa si fa all'[artistico]?
+    - puoi darmi più informazioni sul [liceo artistico]?
+    - posso avere informazioni sul [liceo artistico]?
+    - in cosa consiste l'[artistico]?
+    - dimmi di più sul [liceo artistico]
+    - dammi informazioni sull'[artistico]
+    - fai una breve descrizione del [liceo artistico]
+    - quali sono le materie che si studiano nel corso di studi del [liceo]?
+
+
+- intent: info_iti
+  examples: |
+    - cosa si studia al [tecnico informatico]?
+    - che competenze offre il [tecnico informatico]?
+    - cosa si fa all'[iti]?
+    - cosa si fa all'[itis]?
+    - puoi darmi più informazioni sul [tecnico]?
+    - posso avere informazioni sul [tecnico informatico]?
+    - in cosa consiste l'[istituto tecnico informatico]?
+    - dimmi di più sul [istituto tecnico]
+    - dammi informazioni sull'[industriale]
+    - fai una breve descrizione del [tecnico industriale]
+    - quali sono le materie che si studiano nel corso di studi dell'[itis]?
+
+
+- intent: info_logistica
+  examples: |
+    - cosa si studia all'indirizzo [trasporti e logistica]?
+    - che competenze offre il [logistico]?
+    - cosa si fa al [logistico]?
+    - puoi darmi più informazioni sull'indirizzo [logistico]?
+    - posso avere informazioni sull'[aeronautico]?
+    - in cosa consiste [trasporti e logistica]?
+    - dimmi di più sul [trasporti e logistica]
+    - dammi informazioni sul [logistico]
+    - fai una breve descrizione del [trasporti e logistica]
+    - quali sono le materie che si studiano nel corso di studi del [logistico]?
+
+- intent: info_accesso
+  examples: |
+    - come si [accede]?
+    - come funziona l'[accesso] alla (scuola)?
+    - come faccio ad [accedere] all'(istituto Enzo Siciliano)?
+    - come faccio ad [accedere] all'(istituto)?
+    - come faccio ad [accedere] alla (scuola)?
+    - come faccio ad [accedere] all'(IIS Enzo Siciliano)?
+    - come faccio ad [accedere] all'(IIS Bisignano)?
+
+- intent: info_luogo
+  examples: |
+    - dove si trova la (scuola)?
+    - in quale zona è la (scuola)?
+    - qual è la via della (scuola)?
+    - qual è la via dell'(istituto)?
+    - in che luogo è situata la (scuola)?
+    - mi puoi fornire l'indirizzo della (scuola)?
+    - dove si trova la sede dell'(IIS Enzo Siciliano)?
+
+- intent: info_contatti
+  examples: |
+    - dove posso contattare la (scuola)?
+    - quali sono i [contatti] della (scuola)?
+    - qual è la mail dell'(istituto)?
+    - qual è il numero di telefono della (scuola)?
+    - in quali modalità posso contattare la (scuola)?
+    - quali sono i contatti della segreteria?
+    - dove posso chiamare la segreteria?
+    - qual è la mail della segreteria?
+    - dove posso traovare la pec della segreteria?
+    - dove posso visualizzare i contatti della segreteria?
+
+
+- intent: info_circolari
+  examples: |
+    - dove posso trovare le [circolari] della (scuola)?
+    - dove posso visualizzare le [circolari] dell'(istituto)?
+    - qual è il link per le [circolari]?
+    - qual è l'ultima [circolare]?
+    - mi puoi dire dove trovare le [circolari]?
+
+
+- intent: notizie
+  examples: |
+    - dove posso trovare le ultime [notizie] della (scuola)?
+    - dove sono disponibili le [notizie] dell'(istituto)?
+    - dove posso vedere le [notizie] dell'(IIS Enzo Siciliano)?
+    - come visulizzare le [notizie]?
+    - dove consultare le [notizie]?
+
+- intent: libri
+  examples: |
+    - dove visulizzare l'elenco dei [libri] di testo della (scuola)?
+    - ho bisogno dell'elenco dei [libri] dove trovarlo?
+    - quali [libri] sono stati adottati?
+    - quali sono i [libri] per l'ITI?
+    - quali sono i [libri] per lo scientifico?
+    - quali sono i [libri] per il classico?
+    - quali sono i [libri] per l'artistico?
+    - quali sono i [libri] per il trasporto e logistica?
+    - quali sono i [libri] per il tecnico?
+    - quali sono i [libri] per l'informatico?
+    - quali sono i [libri] per l'industriale?
+    - quali sono i [libri] per il liceo?
+
+- intent: presentazione
+  examples: |
+    - puoi fornire una [presentazione] della (scuola)?
+    - [presenta] la (scuola)
+    - [presenta] l'(istituto)
+    - [presenta] l'(IIS Bisignano)
+    - [presenta] l'(IIS Enzo Siciliano)
+    - puoi fare una [presentazione] della (scuola)?
+    - potresti [presentarmi] la (scuola)?
+    - parlami della (scuola)
+    - parlami dell'(istituto)
+    - introducimi alla (scuola)
+    - introducimi all'(istituto)
+
+- intent: storia
+  examples: |
+    - che [storia] ha la (scuola)?
+    - qual è la [storia] dell'(istituto)?
+    - raccontami della (scuola)
+    - qual è il passato della (scuola)?
+    - qual è la [storia] dell'(IIS Bisignano)?
+    - qual è la [storia] dell'(IIS Enzo Siciliano)?
+    - che [storia] ha l'(istituto)?
+    - che [storia] ha l'(IIS Enzo Siciliano)?
+    - che [storia] ha l'(IIS Bisignano)?
+    - raccontami di più sull'(istituto)
+
+- intent: icdl
+  examples: |
+   - che cos'è l'ICDL?
+   - in cosa consiste l'ICDL?
+   - spiega cos'è l'ICDL?
+   - come funziona la certificazione ICDL?
+   - vorrei avere più informazioni sull'ICDL
+   - sono interessato all'ICDL, in cosa consiste?
+   - sono interessata all'ICDL, in cosa consiste?
+   - puoi dirmi di più sull'ICDL?
+   - descrivi l'ICDL
+   - fai una descrizione dell'ICDL
+
+- intent: info_date_icdl
+  examples: |
+    - quando sono gli esami ICDL?
+    - dove posso trovare il calendario esami ICDL?
+    - come faccio a visualizzare il calendario esami dell'ICDL?
+    - devo posso consultare le date o il calendario dell'ICDL?
+    - mi serve visualizzare il calendario ICDL, dove trovarlo?
+    - dove si trova il calendario esami ICDL?
+    - date ICDL
+    - quali sono le dati degli esami ICDL?
+
+- intent: materie_esame
+  examples: |
+    - quali materie sono uscite alla maturità?
+    - che materie ci sono alla maturità?
+    - quali sono le materie dello scritto della maturità?
+    - cosa c'è alla prima prova della maturità?
+    - cosa c'è alla seconda prova della maturità?
+    - che materia è uscita al classico?
+    - che materie sono uscite al classico?
+    - che materie sono uscite all'orale al classico?
+    - che materia è uscita al classico?
+    - che materie sono uscite al classico?
+    - che materie sono uscite all'orale al classico?
+    - che materia è uscita allo scientifico?
+    - che materie sono uscite allo scientifico?
+    - che materie sono uscite all'orale al liceo?
+    - che materia è uscita all'ITI?
+    - che materie sono uscite all'ITIS??
+    - che materie sono uscite al tecnico?
+    - che materia è uscita all'industriale?
+    - che materie sono uscite all'informatico?
+    - che materie sono uscite all'orale all'artistico?
+    - che materia è uscita al trasporti e logistica?
+    - che materie sono uscite al logistico?
+    - che materie sono uscite all'orale al trasporti?
+    - quali saranno i commissari interni?
+    - quali saranno i commisari esterni?
+
+- intent: info_maturità
+  examples: |
+    - quali sono le date della maturità?
+    - quando è la prima prova scritta?
+    - in che data è la prima prova?
+    - quando è la seconda prova scritta?
+    - in che data è la seconda prova?
+    - i colloqui orali quando inziano?
+    - l'orale in che data è?
+    - quando inizia l'orale?
+    - come funziona il nuovo esame?
+    - quante materie sono all'esame di maturità?
+    - quanti commissari sono all'esame?
+
+- intent: iscrizione_online
+  examples: |
+    - come faccio ad [iscrivermi] alla (scuola)?
+    - come effettuare l'[iscrizione] all'(istituto)?
+    - come fare per [iscriversi] all'(IIS Bisignano)?
+    - come funziona l'[iscrizione] all'(IIS Enzo Siciliano)?
+
+
+- intent: open_day
+  examples: |
+    - quando sarà il prossimo open day?
+    - sono in programma degli open day?
+    - in che data sono gli open day?
+    - dove posso vedere i prossimi open day?
+    - vorrei vedere la scuola quando ci sono gli open day?
+    - quando posso venire a vedere la scuola?
+    - vorrei venire a vedere la scuola, quando posso venire?
+    - quando posso visitare la scuola?
+    - quando sarà aperta al pubblico la scuola?
+    - prossima data open day?
+    - voglio vedere com'è la scuola
+
+- intent: organizzazione_scuola
+  examples: |
+    - in che modo è [organizzata] la (scuola)?
+    - qual è l'[organizzazione] (scolastica)?
+    - com'è composta l'[organizzazione] dell'(istituto)?
+    - da quali organi è costituita la scuola?
+    - da quali elementi è composta la scuola?
+    - quanti parti compongono la scuola?
+
+- intent: info_organi
+  examples: |
+    - dammi più informazioni sulla dirigenza
+    - dammi più informazioni sulla segreteria
+    - dammi più informazioni sulla scuola
+    - dove posso trovare i dettagli sull'organizzazione?
+    - cosa fa la dirigenza?
+    - cosa fa la segreteria?
+    - cosa fa la scuola?
+    - qual è la funzione della dirigenza?
+    - qual è la funzione della segreteria?
+    - qual è la funzione della scuola?
+    - che ruolo ha la dirigenza?
+    - che ruolo ha la segreteria?
+    - che ruolo ha la scuola?
+    - parlami della dirigenza
+    - parlami della segreteria
+    - parlami della scuola
+
+
+- intent: calendario
+  examples: |
+    - dove trovare il [calendario] (scolastico)?
+    - dove vedere le [date] del calendario?
+    - quali sono i giorni di vacanza?
+    - dove posso trovare il [calendario] della (scuola)?
+    - dove consultare il [calendario]?
+
+- intent: pon
+  examples: |
+    - quali sono i [pon] della (scuola)?
+    - dove posso vedere i [pon] della (scuola)?
+    - quali [pon] fa l'(istituto)?
+
+- intent: orari_segreteria
+  examples: |
+    - in quali orari è aperta la segreteria?
+    - quali sono gli orari della segreteria?
+    - quando chiude la segreteria?
+    - quando apre la segreteria?
+    - che orari fa la segreteria?
+    - dove trovare gli orari della segreteria?
+    - come consultare gli orari della segreteria?
+    - dove vedere gli orari della segreteria?
+
+- intent: orari_classi
+  examples: |
+    - dove vedere gli orari provvisori delle classi?
+    - qual è l'orario dell'ITI?
+    - qual è l'orario del liceo?
+    - qual è l'orario dello scientifica?
+    - qual è l'orario del classico?
+    - qual è l'orario dell'artistico?
+    - qual è l'orario dell'informatico?
+    - qual è l'oario dell'industriale?
+    - qual è l'orario del logistico?
+    - come consultare gli orari?
+    - dove posso visualizzare gli orari delle lezioni?
+
+- intent: erasmus
+  examples: |
+    - che cos'è l'erasmus?
+    - in cosa consiste l'erasmus?
+    - cosa si fa durante l'erasmus?
+    - scuola ed erasmus
+    - come funziona l'erasmus?
+    - dammi informazioni sull'erasmus
+    - vorrei sapere cos'è l'erasmus
+
+- intent: ptof
+  examples: |
+    - che cos'è il ptof?
+    - in cosa consiste il ptof?
+    - dove trovare la sezione del ptof?
+    - dove visualizzare la pagina del ptof?
+    - scuola e ptof
+
+- intent: scrutini
+  examples: |
+    - quando ci sono gli scrutini?
+    - quando saranno i prossimi scrutini?
+    - in che data avverrano gli scrutini?
+    - che date sono state fissate per gli scrutini?
+
+- intent: nome
+  examples: |
+    - come ti chiami?
+    - qual è il tuo nome?
+    - come sei stato chiamato?
+    - chi sei?
+    - come vieni chiamato?
+    . hai un nome?
+
+- intent: altre_info
+  examples: |
+    - voglio altro
+    - voglio altre informazioni
+    - vorrei sapere di più
+    - voglio farti un'altra domanda
+    - avrei un dubbio su un qualcosa
+    - mi stavo domandando una cosa
+    - posso chiederti una delucidazione?
+    - mi servirebbe sapere altro ancora
+    - ho bisogno di altre informazioni
+
+- intent: ripetizione
+  examples: |
+    - non ho ben capito puoi ripetere?
+    - ripeti
+    - fai una ripetizione
+    - potresti ripetere?
+    - per favore ripeti?
+
+- intent: domande_studio
+  examples: |
+    - cosa si studia principalmente?
+    - cosa imparerò?
+    - cosa insegnano ai vari indirizz?
+    - quali competenze offrono gli indirizzi a scuola?
+
+- intent: quantità_ore
+  examples: |
+    - quante ore si fanno all'iti?
+    - quante ore si fanno al tecnico?
+    - quante ore si fanno all'industriale?
+    - quante ore si fanno all'informatico?
+    - quante ore si fanno all'itis?
+    - quante ore si fanno al liceo?
+    - quante ore si fanno al liceo scientifico?
+    - quante ore si fanno al liceo classico?
+    - quante ore si fanno al liceo artistico?
+    - quante ore si fanno al trasporti e logistica?
+
+
+- intent: creatori
+  examples: |
+    - da chi sei stato creato?
+    - chi ti ha programmato?
+    - come sei stato programmato?
+    - cosa sei?
+    - chi sono i tuoi ideatori?
+    - chi sono i tuoi creatori?
+
+
+- intent: preside
+  examples: |
+    - chi è il preside dell'(istituto)?
+    - chi è il preside dell'(IIS Bisignano)?
+    - chi è il preside dell'(IIS Enzo Siciliano)?
+    - chi è il preside della (scuola)?
+    - come si chiama il preside della (scuola?
+    - qual è il nome del preside?
+    - qual è il cognome del preside?
+
+- intent: enzo_siciliano
+  examples: |
+    - chi era Enzo Siciliano?
+    - chi è Enzo Siciliano?
+    - perchè la (scuola) si chiama Enzo Siciliano?
+    - perchè l'(istituto) si chiama Enzo Siciliano?
+    - perchè l'(IIS Bisignano) si chiama Enzo Siciliano?
+    - che persona era Enzo Siciliano?
+    - raccontami di Enzo Siciliano
+    - parlami di Enzo Siciliano
+    - voglio sapere chi era Enzo Siciliano

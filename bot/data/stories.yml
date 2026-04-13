@@ -1,0 +1,229 @@
+version: "3.1"
+
+stories:
+
+- story: default
+  steps:
+  - intent: accoglienza
+  - action: utter_accoglienza
+  - intent: chiusura
+  - action: utter_chiusura
+
+
+- story: thanks
+  steps:
+  - intent: ringraziamento
+  - action: utter_ringraziamento
+
+- story: info
+  steps:
+  - intent: informazioni
+  - action: action_info_scuola
+  - intent: informazioni_scuola
+  - action: action_confirm_info
+
+
+- story: info_numeri
+  steps:
+  - intent: informazioni_numeri
+  - action: utter_info_num
+
+- story: info_studio
+  steps:
+  - intent: informazioni_indirizzi
+  - action: utter_info_indirizzi
+
+- story: info_scient
+  steps:
+  - intent: info_scientifico
+  - action: utter_info_scientifico
+
+- story: info_class
+  steps:
+  - intent: info_classico
+  - action: utter_info_classico
+
+- story: info_art
+  steps:
+  - intent: info_artistico
+  - action: utter_info_artistico
+
+- story: info_tecnico
+  steps:
+  - intent: info_iti
+  - action: utter_info_iti
+
+- story: info_logi
+  steps:
+  - intent: info_logistica
+  - action: utter_info_logi
+
+- story: info_access
+  steps:
+  - intent: info_accesso
+  - action: utter_info_acc
+
+- story: info_location
+  steps:
+  - intent: info_luogo
+  - action: utter_info_luogo
+
+- story: contatti
+  steps:
+  - intent: info_contatti
+  - action: utter_info_contatti
+
+- story: circolari
+  steps:
+  - intent: info_circolari
+  - action: utter_info_circolari
+
+- story: notizie
+  steps:
+  - intent: notizie
+  - action: utter_notizie
+
+- story: libri
+  steps:
+  - intent: libri
+  - action: utter_libri
+
+- story: presenta
+  steps:
+  - intent: presentazione
+  - action: utter_presentazione
+
+- story: storia
+  steps:
+  - intent: storia
+  - action: utter_storia
+
+- story: icdl
+  steps:
+  - intent: icdl
+  - action: utter_icdl
+
+- story: info_date
+  steps:
+  - intent: info_date_icdl
+  - action: utter_date_icdl
+
+- story: info_materie
+  steps:
+  - intent: materie_esame
+  - action: utter_materie_maturità
+
+- story: info_iscrizione
+  steps:
+  - intent: iscrizione_online
+  - action: utter_iscrizione
+
+- story: info_maturità
+  steps:
+  - intent: info_maturità
+  - action: utter_info_maturità
+
+
+- story: info_open
+  steps:
+  - intent: open_day
+  - action: utter_open_day
+
+- story: info_organizzazione
+  steps:
+  - intent: organizzazione_scuola
+  - action: utter_organizzazione
+
+- story: organi_scolastici
+  steps:
+  - intent: info_organi
+  - action: utter_info_organi
+
+- story: calendario
+  steps:
+  - intent: calendario
+  - action: utter_calendario
+
+- story: pon
+  steps:
+  - intent: pon
+  - action: utter_pon
+
+
+- story: segreteria_orari
+  steps:
+  - intent: orari_segreteria
+  - action: utter_orari_segreteria
+
+- story: orario
+  steps:
+  - intent: orari_classi
+  - action: utter_orari_classi
+
+- story: erasmus
+  steps:
+  - intent: erasmus
+  - action: utter_erasmus
+
+- story: ptof
+  steps:
+  - intent: ptof
+  - action: utter_ptof
+
+- story: scrutini
+  steps:
+  - intent: scrutini
+  - action: utter_scrutini
+
+- story: nome
+  steps:
+  - intent: nome
+  - action: utter_nome
+
+- story: no_domande
+  steps:
+  - intent: negazione
+  - action: utter_negazione
+
+- story: domande
+  steps:
+  - intent: affermazione
+  - action: utter_affermazione
+
+- story: altro
+  steps:
+  - intent: altre_info
+  - action: utter_altro
+
+- story: ripetizione
+  steps:
+  - intent: ripetizione
+  - action: utter_ripetizione
+
+- story: corsi_studio
+  steps:
+  - intent: domande_studio
+  - action: utter_studio
+
+
+- story: tot_ore
+  steps:
+  - intent: quantità_ore
+  - action: utter_qnt_ore
+
+
+- story: creatori
+  steps:
+  - intent: creatori
+  - action: utter_creatori
+
+
+- story: preside
+  steps:
+  - intent: preside
+  - action: utter_preside
+
+- story: enzo_siciliano
+  steps:
+  - intent: enzo_siciliano
+  - action: utter_siciliano

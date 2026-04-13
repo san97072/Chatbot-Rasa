@@ -1,0 +1,194 @@
+version: "3.1"
+
+intents:
+  - accoglienza
+  - chiusura
+  - affermazione
+  - negazione
+  - ringraziamento
+  - informazioni
+  - informazioni_numeri
+  - informazioni_scuola
+  - informazioni_indirizzi
+  - info_scientifico
+  - info_classico
+  - info_artistico
+  - info_iti
+  - info_logistica
+  - info_accesso
+  - info_luogo
+  - info_contatti
+  - info_circolari
+  - notizie
+  - libri
+  - presentazione
+  - storia
+  - icdl
+  - info_date_icdl
+  - materie_esame
+  - info_maturità
+  - iscrizione_online
+  - open_day
+  - organizzazione_scuola
+  - info_organi
+  - calendario
+  - pon
+  - orari_segreteria
+  - orari_classi
+  - erasmus
+  - ptof
+  - scrutini
+  - nome
+  - altre_info
+  - ripetizione
+  - domande_studio
+  - quantità_ore
+  - creatori
+  - preside
+  - enzo_siciliano
+
+entities:
+  - scuola
+  - istituto
+  - IIS Enzo Siciliano
+  - IIS Bisignano
+
+responses:
+  utter_accoglienza:
+  - text: "Ciao! come posso esserti di aiuto?"
+
+  utter_chiusura:
+  - text: "Arrivederci! Spero di esserti stato di aiuto"
+
+  utter_ringraziamento:
+  - text: "Di nulla! vuoi sapere altro?"
+
+  utter_negazione:
+  - text: "In caso hai altre domande non esitare a chiedere"
+
+  utter_affermazione:
+  - text: "Cosa vorresti sapere?"
+
+  utter_info_num:
+    - text: "La scuola ha 330 Alunni e 20 Classi"
+
+  utter_info_indirizzi:
+  - text: "Nella scuola è possibile frequentare i seguenti indirizzi = Liceo Scientifico, Informatica e telecomunicazioni, Trasporti e logistica, Liceo Classico, Liceo Artistico"
+
+  utter_info_scientifico:
+  - text: "Il percorso del liceo scientifico favorisce l'acquisizione delle conoscenze e dei metodi propri della matematica, della fisica e delle scienze naturali. Per saperne di più clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/liceo-scientifico-2/"
+
+  utter_info_classico:
+  - text: "Il liceo classico consente di approfondire lo studio della civiltà classica e della cultura umanistica. Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/liceo-classico/"
+
+  utter_info_artistico:
+  - text: "Il percorso del Liceo Artistico è indirizzato allo studio dei fenomeni estetici e alla pratica artistica. Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/liceo-artistico/"
+
+  utter_info_iti:
+  - text: "Per entrare nel mondo delle comunicazioni e dell'informatica e capirne le norme che lo regolano e le tecnologie utilizzate. Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/informatica-e-telecomunicazioni/"
+
+  utter_info_logi:
+  - text: "Permette di approfondire la realizzazione e la conduzione dei sistemi di trasporto navali, terrestri e aerei. Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/trasporti-e-logistica/"
+
+  utter_info_acc:
+  - text: "Per accedere alla scuola secondaria di secondo grado, dopo aver completato il ciclo di studi della scuola secondaria di primo grado, è necessario  iscriversi tramite la procedura online presente su https://www.istruzione.it/iscrizionionline. L'iscrizione alla secondaria di secondo grado viene effettuata tramite la compilazione di un modulo on line disponibile nel periodo comunicato ogni anno attraverso la circolare sulle iscrizioni che viene pubblicata di norma nel mese di novembre."
+
+  utter_info_luogo:
+  - text: "Sede Centrale Bisignano con indirizzi ITI e Liceo Scientifico Via Rita Levi Montalcini snc, Bisignano (CS), 87043. Sede di Luzzi con indirizzi Liceo Artistico e Classico Via San Giuliano Luzzi, 87040 Luzzi (CS)"
+
+  utter_info_contatti:
+  - text: "Telefono = 0984949887, Email = CSIS01600X@istruzione.it, PEC = csis01600x@pec.istruzione.it"
+
+  utter_info_circolari:
+  - text: "Tutte le circoalari sono disponibili al seguente link https://www.iisbisignano.edu.it/circolare/"
+
+  utter_notizie:
+  - text: "Tutte le notizie sono disponibili al seguente link https://www.iisbisignano.edu.it/novita/le-notizie/"
+
+  utter_libri:
+  - text: "Tutte le liste dei libri di testo aggiornate sono disponibili sul seguente link https://www.iisbisignano.edu.it/didattica/libri-di-testo/"
+
+  utter_presentazione:
+  - text: "L'Istituto è collocato nella media Valle Crati, a Bisignano (CS), con una popolazione di circa 10.000 abitanti. Storicamente composta da due indirizzi, il Liceo Scientifico e l'Istituto Tecnico Industriale (indirizzo Informatica e Telecomunicazioni), da quest'anno l'Istituto propone in aggiunta un nuovo indirizzo Aeronautico, diploma innovativo che alla fine del ciclo quinquennale di studi, risulta immediatamente spendibile sul mercato del lavoro, ma è al tempo stesso valido per il concorso dell'Accademia Aeronautica e per l'accesso a tutte le facoltà universitarie. Per avere ulteriori informazioni clicca il seguente link https://www.iisbisignano.edu.it/il-contesto/"
+
+  utter_storia:
+  - text: "L'Istituto di Istruzione Superiore “E. Siciliano”, nasce nell'anno 2000-01 dall'accorpamento dell'Istituto Tecnico Industriale Statale e del Liceo Scientifico di Bisignano. Intitolato nel maggio 2008 allo scrittore Enzo Siciliano di origine bisignanese, si configura nel territorio come il principale polo di attrazione culturale. Il Liceo Scientifico aveva adottato negli anni precedenti la sperimentazione P.N.I (Piano Nazionale d'Informatica); in seguito alla Riforma Gelmini e la conseguente eliminazione di tutte le sperimentazioni, ottiene un rafforzamento della sua caratterizzazione scientifica. L'Istituto Tecnico Industriale, a sua volta, si è trasformato in Istituto Tecnico Settore Tecnologico con Indirizzo “Informatica e Telecomunicazioni”."
+
+  utter_icdl:
+  - text: "La patente internazionale per l'uso del computer (International Computer Driving Licence, ICDL) è un attestato che certifica il possesso di una competenza informatica di base Nata nel 1995. Introdotta in Italia nel 1997, è tradotta in oltre 40 lingue, è riconosciuta dai principali enti e organismi internazionale che si occupano di competenze informatiche. L'IIS “E. Siciliano” di Bisignano, in collaborazione con AICA (Associazione Italiana per l’Informatica ed il Calcolo Automatico), è accreditato come Test Center ICDL, ovvero come sede presso la quale chiunque può sostenere gli esami per il conseguimento della Patente Europea del Computer (ICDL, International Certification of Digital Literacy) e della Certificazione Internazionale di Alfabetizzazione Digitale (CIAD). Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/icdl/"
+
+  utter_date_icdl:
+  - text: "Puoi consultare il calendario esami direttamente da questo link https://www.iisbisignano.edu.it/calendario-esami/"
+
+  utter_materie_maturità:
+  - text: "Per vedere le materie del tuo indirizzo e i rispettivi commissari clicca sul link ufficiale del MIM https://visualizzamaterieesame.static.istruzione.it/"
+
+  utter_info_maturità:
+  - text: "Il nuovo Esame di Maturità verte su 4 materie scelte a fine gennaio, ed è composto da due prove scritte e successivamanente dal colloquio orale, la commissione è composta da due interni e due esterni più il presidente della commissione esterno. Le date sono 18 Giugno per la prima prova, 19 Giugno la seconda prova scritta e gli orali a partire dal 25 Giugno. Per altre informazioni puoi cliccare sul seguente link https://www.istruzione.it/esami-di-primo-e-secondo-ciclo-2025-2026/Esami%20di%20primo%20e%20secondo%20ciclo%202025-2026.html"
+
+  utter_iscrizione:
+  - text: "Per effettuare l'iscrizione online clicca sul link ufficiale del MIM https://www.istruzione.it/iscrizionionline//"
+
+  utter_open_day:
+  - text: "Puoi trovare tutte le informazioni per l'Open Day consultando le notizie sul seguente link https://www.iisbisignano.edu.it/novita/le-notizie/"
+
+  utter_organizzazione:
+  - text: "L'organizzazione scolastica è da tre elementi, Dirigenza, Segreteria e infine dalla scuola stessa"
+
+  utter_info_organi:
+  - text: "Puoi trovare le informazioni dei singoli cliccando su questo link per la Dirigenza https://www.iisbisignano.edu.it/struttura/i-i-s-e-siciliano/dirigenza/, su questo per la Segreteria https://www.iisbisignano.edu.it/struttura/i-i-s-e-siciliano/segreteria/ e su questo per la scuola https://www.iisbisignano.edu.it/struttura/i-i-s-e-siciliano/"
+
+  utter_calendario:
+  - text: "Per consultare il calendario clicca sul seguente link https://www.iisbisignano.edu.it/adattamento-calendario-scolastico-i-i-s-e-siciliano-bisignano-luzzi/"
+
+  utter_pon:
+  - text: "Per visualizzare tutti i PON clicca sul seguente link https://www.iisbisignano.edu.it/pon/"
+
+  utter_orari_segreteria:
+  - text: "Per conoscere gli orari e le modalità di ricevimento contattare la segreteria scolastica al seguente numero di telefono 0984949887, o al seguente Indirizzo Email CSIS01600X@istruzione.it. In caso puoi consultare il seguente link https://www.iisbisignano.edu.it/struttura/i-i-s-e-siciliano/segreteria/."
+
+  utter_orari_classi:
+  - text: "Per visualizzare l'orario delle classi clicca sul seguente link https://www.iisbisignano.edu.it/orario-provvisorio-classi-a-s-2025-26-4/"
+
+  utter_erasmus:
+  - text: "Per scoprire e avere più informazioni sull'ERASMUS+ clicca il seguente link https://www.iisbisignano.edu.it/etwinning-erasmus-2/"
+
+  utter_ptof:
+  - text: "Per il PTOF clicca sul seguente link https://www.iisbisignano.edu.it/ptof/"
+
+  utter_scrutini:
+  - text: "Per sapere le ultime informazioni sugli scrutini consulta la sezione dedicate alle circolari cliccando il seguente link https://www.iisbisignano.edu.it/circolare/"
+
+  utter_nome:
+  - text: "Mi chiamo Enzino e sono il Chatbot dell'IIS Enzo Siciliano"
+
+  utter_altro:
+  - text: "Certamente! Dimmi tutto"
+
+  utter_ripetizione:
+  - text: "Su cosa vuoi che ripeta?"
+
+  utter_studio:
+  - text: "In base all'indirizzo che sceglierai avrai diversi corsi di studio. Per l'ITI ti insegnerà il necessario per entrare nel mondo delle comunicazioni e dell'informatica. Per il Liceo Scientifico favorisce l'acquisizione delle conoscenze e dei metodi propri della matematica, della fisica e delle scienze naturali. Per il Liceo Classico consente di approfondire lo studio della civiltà classica e della cultura umanistica. Per il Liceo Artistico è indirizzato allo studio dei fenomeni estetici e alla pratica artistica. Il Trasporti e Logistica permette di approfondire la realizzazione e la conduzione dei sistemi di trasporto navali, terrestri e aerei"
+
+  utter_qnt_ore:
+  - text: "La quantità di ore che si fanno nei vari indirizzi è la seguente. ITIS 32 ore settimanali. Liceo Scientifico 27 ore settimanali al biennio e 30 ore settimanali al triennio. Liceo Artistico 34 ore settimanali al biennio e 35 ore settimanali al triennio. Liceo Classico 27 ore settimanali al biennio e 31 ore settimanali al triennio."
+
+  utter_creatori:
+    - text: "Sono un Chatbot creato tramite RASA e sono stato creato da due studenti del 5B ITI dell'a.a 2025/26"
+
+  utter_preside:
+    - text: "Il preside dell'IIS Enzo Siciliano è Raffaele Carucci"
+
+  utter_siciliano:
+    - text: "Enzo Siciliano (Roma, 27 maggio 1934 - Roma, 9 giugno 2006) è stato uno scrittore, saggista e drammaturgo italiano da genitori originari di Bisignano"
+
+actions:
+  - extraction_school_entity
+  - action_info_scuola
+  - action_confirm_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
