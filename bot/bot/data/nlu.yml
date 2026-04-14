@@ -75,6 +75,8 @@ nlu:
     - informazioni (istituto)
     - mi servirebbero delle [informazioni] sulla (scuola)
     - desidererei avere maggiori [informazioni] sull'(istituto)
+    - vorrei avere informazioni sulla scuola
+    - informazioni scuola
 
 - intent: informazioni_numeri
   examples: |

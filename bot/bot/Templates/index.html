@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Titillium Web', sans-serif; background: #f5f5f5; color: #333; }
+
+/* TOP BAR */
+.topbar { background: #003f7d; color: #fff; font-size: 12px; padding: 4px 0; }
+.topbar-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; }
+.topbar a { color: #cde; text-decoration: none; font-size: 11px; }
+.topbar a:hover { color: #fff; }
+
+/* HEADER */
+.header { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 0; }
+.header-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; }
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-circle { width: 60px; height: 60px; border-radius: 50%; background: #003f7d; display: flex; align-items: center; justify-content: center; }
+.logo-circle svg { width: 36px; height: 36px; fill: #fff; }
+.school-name h1 { font-size: 15px; font-weight: 700; color: #003f7d; line-height: 1.2; }
+.school-name p { font-size: 11px; color: #666; }
+.header-right { display: flex; gap: 10px; align-items: center; }
+.header-right input { border: 1px solid #ccc; border-radius: 4px; padding: 5px 10px; font-size: 12px; width: 140px; }
+.btn-accedi { background: #003f7d; color: #fff; border: none; border-radius: 4px; padding: 5px 12px; font-size: 12px; cursor: pointer; font-family: 'Titillium Web', sans-serif; }
+
+/* NAV */
+nav { background: #003f7d; }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; gap: 4px; }
+nav a { color: #cde; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 14px; display: block; letter-spacing: 0.5px; }
+nav a:hover, nav a.active { background: #0056a8; color: #fff; }
+nav a.active { background: #00a0e0; color: #fff; }
+
+/* HERO SLIDER */
+.hero { background: #e0e8f0; padding: 20px 0; }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.slide-card { background: #fff; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 24px; padding: 24px 28px; max-width: 780px; margin: 0 auto; }
+.slide-logo { width: 70px; height: 70px; flex-shrink: 0; }
+.slide-logo img { width: 100%; }
+.slide-emblem { text-align: center; }
+.slide-emblem svg { width: 60px; height: 70px; }
+.slide-content h2 { font-size: 13px; font-weight: 400; color: #555; margin-bottom: 4px; }
+.slide-content h3 { font-size: 17px; font-weight: 700; color: #003f7d; margin-bottom: 8px; line-height: 1.3; }
+.slide-content p { font-size: 12px; color: #777; margin-bottom: 10px; }
+.btn-scopri { background: #003f7d; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; font-size: 12px; cursor: pointer; font-family: 'Titillium Web', sans-serif; font-weight: 600; }
+.slide-dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #aaa; cursor: pointer; }
+.dot.active { background: #003f7d; }
+
+/* PARTNER LOGOS */
+.partners { background: #fff; padding: 20px 0; border-bottom: 1px solid #eee; }
+.partners-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.partner-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+.partner-item { text-align: center; }
+.partner-item .logo-box { font-size: 18px; font-weight: 700; color: #003f7d; border: 2px solid #003f7d; padding: 6px 14px; border-radius: 4px; display: inline-block; margin-bottom: 4px; }
+.partner-item .logo-box.green { color: #2e7d32; border-color: #2e7d32; }
+.partner-item .logo-box.teal { color: #00796b; border-color: #00796b; }
+.partner-item span { display: block; font-size: 10px; color: #666; }
+.partner-dots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+
+/* NEWS SECTION */
+.section { max-width: 1100px; margin: 0 auto; padding: 28px 16px 8px; }
+.section-title { font-size: 20px; font-weight: 700; color: #333; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 3px solid #003f7d; display: inline-block; }
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 16px; }
+.news-card { border: 1px solid #e0e0e0; border-radius: 6px; padding: 14px; background: #fff; }
+.news-card .tag { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #00a0e0; margin-bottom: 6px; }
+.news-card h4 { font-size: 13px; font-weight: 700; color: #003f7d; margin-bottom: 6px; line-height: 1.4; }
+.news-card p { font-size: 11px; color: #666; line-height: 1.5; }
+.news-card .meta { font-size: 10px; color: #aaa; margin-top: 8px; }
+.btn-altri { display: block; text-align: center; background: #003f7d; color: #fff; border: none; border-radius: 4px; padding: 7px 20px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Titillium Web', sans-serif; margin: 10px auto 24px; width: fit-content; }
+
+/* CIRCOLARI */
+.circolari-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 16px; }
+.circ-card { border-left: 4px solid #003f7d; padding: 10px 12px; background: #fff; border-radius: 0 6px 6px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+.circ-card h4 { font-size: 12px; font-weight: 700; color: #333; margin-bottom: 5px; line-height: 1.4; }
+.circ-card .num { font-size: 10px; color: #00a0e0; font-weight: 700; margin-bottom: 3px; }
+.circ-card .meta { font-size: 10px; color: #aaa; }
+
+/* SERVIZI BANNER */
+.servizi-banner { background: linear-gradient(135deg, #8a2be2 0%, #c020c0 50%, #e040e0 100%); padding: 36px 0 28px; margin-top: 10px; }
+.servizi-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.servizi-banner h2 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.servizi-banner p { font-size: 13px; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+.servizi-form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.servizi-form select { border: none; border-radius: 4px; padding: 9px 14px; font-size: 13px; font-family: 'Titillium Web', sans-serif; background: #fff; min-width: 200px; }
+.servizi-form .btn-scopri-s { background: #fff; color: #8a2be2; border: none; border-radius: 4px; padding: 9px 20px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: 'Titillium Web', sans-serif; }
+
+/* PERCORSI */
+.percorsi-section { background: #fff; }
+.percorsi-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr; min-height: 340px; }
+.percorsi-left { background: #00bcd4; position: relative; overflow: hidden; padding: 30px 24px; }
+.percorsi-left h3 { color: #fff; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.percorsi-left h2 { color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+.percorsi-tab { background: #fff; color: #003f7d; font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 4px; cursor: pointer; display: inline-block; }
+.percorsi-deco { position: absolute; bottom: 20px; left: 20px; opacity: 0.18; }
+.percorsi-right { background: #003f7d; padding: 32px 36px; }
+.percorsi-right h2 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.percorsi-right p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 22px; }
+.corso-item { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; }
+.corso-item:last-of-type { border-bottom: none; }
+.corso-item span.plus { color: #00bcd4; font-size: 18px; font-weight: 700; width: 20px; }
+.corso-item span.name { color: #fff; font-size: 14px; font-weight: 600; }
+.corso-item:hover span.name { color: #00bcd4; }
+.btn-presentazione { display: inline-block; margin-top: 14px; background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #fff; font-size: 12px; padding: 7px 16px; border-radius: 4px; cursor: pointer; font-family: 'Titillium Web', sans-serif; }
+
+/* RISORSE */
+.risorse-section { max-width: 1100px; margin: 0 auto; padding: 24px 16px 30px; }
+.risorse-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.risorse-title { font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px; }
+.risorse-grid { display: flex; gap: 14px; flex-wrap: wrap; }
+.risorse-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 12px 18px; font-size: 13px; font-weight: 600; color: #333; cursor: pointer; font-family: 'Titillium Web', sans-serif; text-decoration: none; }
+.risorse-btn .icon { width: 28px; height: 28px; background: #003f7d; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+.risorse-btn .icon svg { width: 16px; height: 16px; fill: #fff; }
+.risorse-btn:hover { background: #f0f4f8; }
+.btn-biblioteca { background: #003f7d; color: #fff; border: none; border-radius: 4px; padding: 8px 16px; font-size: 12px; font-weight: 600; cursor: pointer; margin-top: 12px; font-family: 'Titillium Web', sans-serif; }
+
+/* FOOTER */
+footer { background: #1a1a2e; color: #ccc; padding: 36px 0 0; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 28px; padding-bottom: 28px; }
+.footer-brand { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.footer-logo { width: 40px; height: 40px; border-radius: 50%; background: #003f7d; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.footer-brand-text h3 { font-size: 12px; font-weight: 700; color: #fff; line-height: 1.4; }
+.footer-brand-text p { font-size: 10px; color: #aaa; }
+footer h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 5px; }
+footer ul li a { color: #aaa; text-decoration: none; font-size: 11px; }
+footer ul li a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid #333; max-width: 1100px; margin: 0 auto; padding: 12px 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: 10px; color: #888; }
+.footer-bottom a { color: #888; text-decoration: none; margin-left: 12px; }
+.footer-bottom a:hover { color: #ccc; }
+
+@media (max-width: 768px) {
+  .news-grid, .circolari-grid { grid-template-columns: 1fr; }
+  .percorsi-inner { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .header-inner { flex-direction: column; gap: 10px; }
+}
+</style>
+<!-- Aggiungi questo prima del </body> del tuo file HTML -->
+
+<!-- Font Awesome per le icone -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    /* VARIABILI IN LINEA CON LO STILE DEL SITO */
+    :root {
+        --chat-primary: #003f7d;      /* Blu scuro istituzionale */
+        --chat-secondary: #00a0e0;     /* Azzurro hover/active */
+        --chat-accent: #00bcd4;        /* Turchese per dettagli */
+        --chat-light: #f0f4f8;
+        --chat-text-dark: #333;
+        --chat-text-light: #fff;
+        --chat-border: #e0e0e0;
+        --button-size: 56px;
+        --chat-font: 'Titillium Web', sans-serif;
+    }
+
+    /* PULSANTE FLOTTANTE CHAT - STILE SITO */
+    .chat-toggle-btn {
+        width: var(--button-size);
+        height: var(--button-size);
+        border: none;
+        background: var(--chat-primary);
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 63, 125, 0.3);
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .chat-toggle-btn:hover {
+        background: var(--chat-secondary);
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 160, 224, 0.4);
+    }
+
+    .chat-toggle-btn i {
+        filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    }
+
+    /* FINESTRA CHAT - STILE COERENTE CON IL SITO */
+    #chat-widget {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 350px;
+        max-width: calc(100vw - 40px);
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 63, 125, 0.2);
+        overflow: hidden;
+        z-index: 1001;
+        font-family: var(--chat-font);
+        border: 1px solid var(--chat-border);
+        display: none;
+        animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HEADER CHAT */
+    .chat-header {
+        background: linear-gradient(135deg, var(--chat-primary) 0%, #0056a8 100%);
+        color: white;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--chat-secondary);
+    }
+
+    .chat-header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .chat-avatar {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: var(--chat-primary);
+        border: 2px solid var(--chat-secondary);
+    }
+
+    .chat-header-info h3 {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.2;
+        letter-spacing: 0.3px;
+    }
+
+    .chat-header-info p {
+        font-size: 11px;
+        margin: 0;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .chat-header-info p i {
+        font-size: 8px;
+        color: #4caf50;
+    }
+
+    .chat-close-btn {
+        background: rgba(255,255,255,0.15);
+        border: none;
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.2s;
+    }
+
+    .chat-close-btn:hover {
+        background: rgba(255,255,255,0.3);
+        transform: rotate(90deg);
+    }
+
+    /* CORPO MESSAGGI */
+    .chat-body {
+        height: 320px;
+        overflow-y: auto;
+        padding: 16px;
+        background: #fafbfc;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Stile messaggi */
+    .chat-message {
+        display: flex;
+        gap: 8px;
+        max-width: 85%;
+    }
+
+    .chat-message.user {
+        align-self: flex-end;
+        flex-direction: row-reverse;
+    }
+
+    .message-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--chat-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    .chat-message.user .message-avatar {
+        background: var(--chat-secondary);
+    }
+
+    .message-bubble {
+        background: white;
+        padding: 10px 14px;
+        border-radius: 16px;
+        border-top-left-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--chat-text-dark);
+        border: 1px solid #edf2f7;
+    }
+
+    .chat-message.user .message-bubble {
+        background: var(--chat-primary);
+        color: white;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 4px;
+    }
+
+    .message-time {
+        font-size: 9px;
+        opacity: 0.6;
+        margin-top: 4px;
+        text-align: right;
+    }
+
+    .typing-indicator {
+        display: flex;
+        gap: 4px;
+        padding: 10px 14px;
+        background: white;
+        border-radius: 16px;
+        width: fit-content;
+    }
+
+    .typing-indicator span {
+        width: 6px;
+        height: 6px;
+        background: var(--chat-primary);
+        border-radius: 50%;
+        animation: typing 1.4s infinite;
+        opacity: 0.4;
+    }
+
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+        0%, 60%, 100% { opacity: 0.4; transform: scale(1); }
+        30% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* FOOTER INPUT */
+    .chat-footer {
+        padding: 12px 16px;
+        background: white;
+        border-top: 1px solid var(--chat-border);
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        border: 1px solid #ddd;
+        border-radius: 24px;
+        padding: 10px 16px;
+        font-size: 13px;
+        font-family: var(--chat-font);
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .chat-footer input:focus {
+        border-color: var(--chat-primary);
+        box-shadow: 0 0 0 3px rgba(0, 63, 125, 0.1);
+    }
+
+    .chat-send-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--chat-primary);
+        border: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.2s;
+        flex-shrink: 0;
+    }
+
+    .chat-send-btn:hover {
+        background: var(--chat-secondary);
+        transform: scale(1.05);
+    }
+
+    .chat-send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* QUICK REPLIES */
+    .quick-replies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .quick-reply-btn {
+        background: white;
+        border: 1px solid var(--chat-primary);
+        color: var(--chat-primary);
+        border-radius: 20px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--chat-font);
+    }
+
+    .quick-reply-btn:hover {
+        background: var(--chat-primary);
+        color: white;
+    }
+
+    /* Scrollbar personalizzata */
+    .chat-body::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .chat-body::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .chat-body::-webkit-scrollbar-thumb {
+        background: var(--chat-primary);
+        border-radius: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        :root { --button-size: 48px; }
+        #chat-widget {
+            right: 10px;
+            left: 10px;
+            width: auto;
+            bottom: 80px;
+        }
+        .chat-body { height: 280px; }
+    }
+</style>
+
+<!-- HTML DEL WIDGET CHAT -->
+<div class="chat-toggle-btn" id="chatToggleBtn">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<div id="chat-widget">
+    <div class="chat-header">
+        <div class="chat-header-left">
+            <div class="chat-avatar">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="chat-header-info">
+                <h3>Assistente IIS Siciliano</h3>
+                <p><i class="fas fa-circle"></i> Online • Risponde subito</p>
+            </div>
+        </div>
+        <button class="chat-close-btn" id="chatCloseBtn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="chat-body" id="chatMessages">
+        <!-- Messaggio di benvenuto -->
+        <div class="chat-message">
+            <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-bubble">
+                Ciao! 👋 Sono l'assistente virtuale dell'IIS "Anna Siciliano". Come posso aiutarti?
+                <div class="message-time">Adesso</div>
+            </div>
+        </div>
+        
+        <!-- Quick Replies -->
+        <div class="chat-message" style="max-width: 100%;">
+            <div class="quick-replies">
+                <button class="quick-reply-btn" data-message="Orari segreteria">📅 Orari segreteria</button>
+                <button class="quick-reply-btn" data-message="Circolari recenti">📋 Circolari recenti</button>
+                <button class="quick-reply-btn" data-message="Percorsi di studio">📚 Percorsi di studio</button>
+                <button class="quick-reply-btn" data-message="Contatti scuola">📞 Contatti</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="Scrivi un messaggio..." aria-label="Messaggio">
+        <button class="chat-send-btn" id="chatSendBtn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+    
+    // Elementi DOM
+    const toggleBtn = document.getElementById('chatToggleBtn');
+    const chatWidget = document.getElementById('chat-widget');
+    const closeBtn = document.getElementById('chatCloseBtn');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSendBtn');
+    
+    // Stato
+    let isWaiting = false;
+    
+    // Funzione per ottenere l'ora formattata
+    function getFormattedTime() {
+        const now = new Date();
+        return now.getHours().toString().padStart(2, '0') + ':' + 
+               now.getMinutes().toString().padStart(2, '0');
+    }
+    
+    // Aggiunge un messaggio alla chat
+    function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${isUser ? 'user' : ''}`;
+        
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        avatar.innerHTML = isUser ? '<i class="fas fa-user-graduate"></i>' : '<i class="fas fa-robot"></i>';
+        
+        const bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        bubble.innerHTML = text + `<div class="message-time">${getFormattedTime()}</div>`;
+        
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(bubble);
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Mostra indicatore di digitazione
+    function showTyping() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'chat-message';
+        typingDiv.id = 'typingIndicator';
+        typingDiv.innerHTML = `
+            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+            <div class="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Rimuove indicatore di digitazione
+    function hideTyping() {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+    }
+    
+    // Invia messaggio al bot
+    async function sendMessage(message) {
+        if (!message.trim() || isWaiting) return;
+        
+        isWaiting = true;
+        sendBtn.disabled = true;
+        chatInput.disabled = true;
+        
+        // Aggiungi messaggio utente
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // Mostra typing
+        showTyping();
+        
+        try {
+            // CHIAMATA AL WEBHOOK RASA
+            const response = await fetch('/webhook', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            });
+            
+            hideTyping();
+            
+            if (response.ok) {
+                const data = await response.json();
+                const botResponse = data.response || 'Mi dispiace, non ho capito. Puoi ripetere?';
+                addMessage(botResponse);
+            } else {
+                // Fallback per demo
+                addMessage('⚠️ Servizio momentaneamente non disponibile. Riprova più tardi.');
+            }
+        } catch (error) {
+            hideTyping();
+            console.error('Errore:', error);
+            addMessage('⚠️ Errore di connessione. Verifica che il server Rasa sia attivo.');
+        }
+        
+        isWaiting = false;
+        sendBtn.disabled = false;
+        chatInput.disabled = false;
+        chatInput.focus();
+    }
+    
+    // Event Listeners
+    toggleBtn.addEventListener('click', () => {
+        chatWidget.style.display = 'block';
+        chatInput.focus();
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        chatWidget.style.display = 'none';
+    });
+    
+    // Chiudi cliccando fuori (opzionale)
+    document.addEventListener('click', (e) => {
+        if (!chatWidget.contains(e.target) && 
+            !toggleBtn.contains(e.target) && 
+            chatWidget.style.display === 'block') {
+            // Non chiudere automaticamente per non infastidire
+        }
+    });
+    
+    sendBtn.addEventListener('click', () => {
+        sendMessage(chatInput.value);
+    });
+    
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage(chatInput.value);
+        }
+    });
+    
+    // Quick Replies
+    document.querySelectorAll('.quick-reply-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const message = btn.dataset.message;
+            chatInput.value = message;
+            sendMessage(message);
+        });
+    });
+    
+    // Apri chat se arriva con parametro URL ?chat=open
+    if (window.location.search.includes('chat=open')) {
+        setTimeout(() => {
+            chatWidget.style.display = 'block';
+        }, 500);
+    }
+    
+})();
+</script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Ministero dell'Istruzione e del Merito</span>
+    <div style="display:flex;gap:14px;align-items:center;">
+      <a href="#">Email</a>
+      <a href="#">PEC</a>
+      <a href="#">Contatti</a>
+      <a href="#">Registrati</a>
+      <span style="display:flex;gap:6px;align-items:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#cde"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#cde"><path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.38 4.61 3.42-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.41-.01-.61.96-.69 1.79-1.56 2.45-2.55z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#cde"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-circle">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="#fff" stroke-width="2"/><text x="20" y="26" text-anchor="middle" fill="#fff" font-size="14" font-family="serif" font-weight="bold">IIS</text></svg>
+      </div>
+      <div class="school-name">
+        <h1>ISTITUTO DI ISTRUZIONE SUPERIORE<br>"Anna Siciliano"</h1>
+        <p>BISIGNANO — C.S. (CS) | Cod. CSRF010001</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <input type="text" placeholder="Cerca..." />
+      <button class="btn-accedi">Registrati</button>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#003f7d"><path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.38 4.61 3.42-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.41-.01-.61.96-.69 1.79-1.56 2.45-2.55z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#003f7d"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="active">SCUOLA</a>
+    <a href="#">SERVIZI</a>
+    <a href="#">NOVITÀ</a>
+    <a href="#" style="background:#00a0e0;color:#fff;">DIDATTICA</a>
+    <a href="#">USL</a>
+    <a href="#">PROGESSI</a>
+    <a href="#">PTOF</a>
+    <a href="#">PNRR</a>
+    <div style="margin-left:auto;">
+      <a href="#" style="background:rgba(255,255,255,0.12);color:#fff;font-size:12px;border-radius:4px;">La Segreteria Cammina</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="slide-card">
+      <div class="slide-emblem">
+        <svg viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="35" rx="26" ry="30" fill="#003f7d"/>
+          <text x="30" y="30" text-anchor="middle" fill="#fff" font-size="9" font-family="serif">MINISTERO</text>
+          <text x="30" y="42" text-anchor="middle" fill="#fff" font-size="8" font-family="serif">ISTRUZIONE</text>
+          <circle cx="30" cy="20" r="8" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <text x="30" y="23" text-anchor="middle" fill="#fff" font-size="8">✦</text>
+        </svg>
+      </div>
+      <div class="slide-content" style="flex:1;">
+        <h2>Ministero dell'Istruzione e del Merito</h2>
+        <h3>Il progetto "Nuovi Bridges" e "Showcase your Voice"</h3>
+        <p>Maria Grazia La Caminara &nbsp;|&nbsp; 13 Dicembre, 20</p>
+        <button class="btn-scopri">LEGGI DI PIÙ</button>
+      </div>
+    </div>
+    <div class="slide-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNER LOGOS -->
+<div class="partners">
+  <div class="partners-inner">
+    <div class="partner-logos">
+      <div class="partner-item">
+        <div class="logo-box">FUTURA</div>
+        <span>PNRR — PIANO NAZIONALE</span>
+        <span>PER LA SCUOLA DI DOMANI</span>
+      </div>
+      <div class="partner-item">
+        <div class="logo-box green">Contro la Corruzione<br><span style="font-size:10px;">Maria Grazia La Caminara</span></div>
+      </div>
+      <div class="partner-item">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:#1a73e8;display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#1a73e8;">Scuola</div>
+            <div style="font-size:14px;font-weight:700;color:#1a73e8;">in Chiaro</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="partner-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NOTIZIE & AVVISI -->
+<div class="section">
+  <div class="section-title">Notizie & Avvisi</div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="tag">Comunicato</div>
+      <h4>Lettera del Commissario con il Presidente del Senato d'Italia 2024-2025</h4>
+      <p>Il progetto che vede il coinvolgimento degli studenti nel processo democratico...</p>
+      <div class="meta">Pubblicato: 14/04/2025 &bull; Avviso importante</div>
+    </div>
+    <div class="news-card">
+      <div class="tag">Avviso</div>
+      <h4>Protocollo di Intesa per il SUCCESSO — Formazione delle commissioni definitiva di Maturità</h4>
+      <p>Specifiche in merito ai criteri per la nomina dei commissari esterni...</p>
+      <div class="meta">Pubblicato: 10/04/2025 &bull; Avviso scolastico</div>
+    </div>
+    <div class="news-card">
+      <div class="tag">Avviso PCTO</div>
+      <h4>POSIZIONAMENTO CONCORSO PLUS — comunicazione dei risultati per le classi PROFESSIONALI 2024-2025</h4>
+      <p>Si comunicano gli esiti del concorso per tutti gli studenti partecipanti...</p>
+      <div class="meta">Pubblicato: 08/04/2025 &bull; PCTO</div>
+    </div>
+  </div>
+  <button class="btn-altri">Altre notizie</button>
+</div>
+
+<!-- CIRCOLARI -->
+<div class="section" style="padding-top:0;">
+  <div class="section-title">Circolari</div>
+  <div class="circolari-grid">
+    <div class="circ-card">
+      <div class="num">CIRCOLARE N° 17 QUADRIMESTRE n.1 2024 — BANDO — ADOZIONE a.s. 2024-2025 — LIBRI 1° QUADRIMESTRE DEFINITIVO — SCIENTIFICO</div>
+      <h4>Adozione libri di testo Liceo Scientifico 2024-2025</h4>
+      <div class="meta">n. 450 &bull; Del 12/04/2025 &bull; Circ. 1234</div>
+    </div>
+    <div class="circ-card">
+      <div class="num">CIRCOLARE N° CONSIGLIO 29 APRILE 2026</div>
+      <h4>Convocazione Consiglio di Istituto del 29 aprile 2026 — ordine del giorno</h4>
+      <div class="meta">n. 449 &bull; Del 10/04/2025 &bull; Circ. 1233</div>
+    </div>
+    <div class="circ-card">
+      <div class="num">Piano finanziario parziale IIS E.S. 2024-2025</div>
+      <h4>Piano finanziario parziale IIS E.S. 2025 — approvazione</h4>
+      <div class="meta">n. 448 &bull; Del 08/04/2025</div>
+    </div>
+  </div>
+  <button class="btn-altri">Altre circolari</button>
+</div>
+
+<!-- SERVIZI BANNER -->
+<div class="servizi-banner">
+  <div class="servizi-inner">
+    <h2>Servizi</h2>
+    <p>Qui puoi trovare i servizi e le informazioni messi a disposizione di famiglie, studenti, personale scolastico e fornitori esterni.</p>
+    <div class="servizi-form">
+      <select>
+        <option>Registrazione Esperto</option>
+        <option>Registro elettronico</option>
+        <option>Mensa scolastica</option>
+      </select>
+      <select>
+        <option>La pagina successiva</option>
+        <option>Modulistica</option>
+        <option>FAQ</option>
+      </select>
+      <button class="btn-scopri-s">Scopri di più</button>
+    </div>
+  </div>
+</div>
+
+<!-- PERCORSI DI STUDIO -->
+<div class="percorsi-section">
+  <div class="percorsi-inner">
+    <div class="percorsi-left">
+      <h3>La scuola</h3>
+      <h3>del domani</h3>
+      <br>
+      <div class="percorsi-tab">IIS E. SICILIANO</div>
+      <div class="percorsi-deco">
+        <svg width="120" height="100" viewBox="0 0 120 100">
+          <rect x="10" y="40" width="50" height="50" fill="#fff" opacity="0.3" rx="4"/>
+          <rect x="40" y="20" width="50" height="50" fill="#fff" opacity="0.2" rx="4"/>
+          <polygon points="35,38 45,10 85,30 75,58" fill="#fff" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+    <div class="percorsi-right">
+      <h2>Percorsi di studio</h2>
+      <p>Gli indirizzi di studio che è possibile frequentare nella scuola</p>
+      <div class="corso-item"><span class="plus">+</span><span class="name">Liceo Scientifico</span></div>
+      <div class="corso-item"><span class="plus">+</span><span class="name">Informatica e telecomunicazioni</span></div>
+      <div class="corso-item"><span class="plus">+</span><span class="name">Trasporti e logistica</span></div>
+      <div class="corso-item"><span class="plus">+</span><span class="name">Liceo Classico</span></div>
+      <div class="corso-item"><span class="plus">+</span><span class="name">Liceo Artistico</span></div>
+      <button class="btn-presentazione">Via alla presentazione della scuola</button>
+    </div>
+  </div>
+</div>
+
+<!-- RISORSE DIDATTICHE -->
+<div class="risorse-section">
+  <div class="risorse-label">Risorse</div>
+  <div class="risorse-title">Esplora le risorse didattiche dell'istituto</div>
+  <div class="risorse-grid">
+    <a href="#" class="risorse-btn">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+      Progetti
+    </a>
+    <a href="#" class="risorse-btn">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+      Scheda didattica
+    </a>
+  </div>
+  <button class="btn-biblioteca">Via alla biblioteca</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="22" height="22" viewBox="0 0 40 40" fill="#fff"><path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4zm-2 22v-8l6 4-6 4z"/></svg>
+        </div>
+        <div class="footer-brand-text">
+          <h3>ISTITUTO DI ISTRUZIONE SUPERIORE<br>"Anna Siciliano"</h3>
+          <p>BISIGNANO — C.S. (CS)</p>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#888;line-height:1.6;">Via Roma, 1 — 87043 Bisignano (CS)<br>Tel. 0984 951015 — csrf010001@istruzione.it</p>
+    </div>
+    <div>
+      <h4>Link Utenti</h4>
+      <ul>
+        <li><a href="#">Ufficio Normativa Regionale</a></li>
+        <li><a href="#">PNRR</a></li>
+        <li><a href="#">Accessi</a></li>
+        <li><a href="#">Albo Pretorio</a></li>
+        <li><a href="#">Contatti</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>La Scuola</h4>
+      <ul>
+        <li><a href="#">Organi Collegiali</a></li>
+        <li><a href="#">Organizzazione</a></li>
+        <li><a href="#">Personale</a></li>
+        <li><a href="#">Didattica</a></li>
+        <li><a href="#">Le scuole distinte</a></li>
+        <li><a href="#">LINKS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>I Servizi</h4>
+      <ul>
+        <li><a href="#">Famiglie</a></li>
+        <li><a href="#">Studenti</a></li>
+        <li><a href="#">Personale</a></li>
+        <li><a href="#">Didattica</a></li>
+        <li><a href="#">Offerta formativa</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Novità</h4>
+      <ul>
+        <li><a href="#">Notizie</a></li>
+        <li><a href="#">Avvisi</a></li>
+        <li><a href="#">Circolari</a></li>
+        <li><a href="#">Bandi</a></li>
+        <li><a href="#">PON</a></li>
+        <li><a href="#">PTOF</a></li>
+        <li><a href="#">Albo</a></li>
+        <li><a href="#">Sito legali</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>
+      <a href="#">Dichiarazione di Accessibilità</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Dichiarazione di Accessibilità</a>
+      <a href="#">Sito Realizzato</a>
+      <a href="#">Note legali</a>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span>Registrati</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#888"><path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.38 4.61 3.42-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.41-.01-.61.96-.69 1.79-1.56 2.45-2.55z"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#888"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
