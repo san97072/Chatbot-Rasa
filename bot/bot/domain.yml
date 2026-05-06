@@ -14,7 +14,6 @@ intents:
   - info_classico
   - info_artistico
   - info_iti
-  - info_logistica
   - info_accesso
   - info_luogo
   - info_contatti
@@ -73,7 +72,7 @@ responses:
     - text: "La scuola ha 330 Alunni e 20 Classi"
 
   utter_info_indirizzi:
-  - text: "Nella scuola è possibile frequentare i seguenti indirizzi = Liceo Scientifico, Informatica e telecomunicazioni, Trasporti e logistica, Liceo Classico, Liceo Artistico"
+  - text: "Nella scuola è possibile frequentare i seguenti indirizzi = Liceo Scientifico, Informatica e telecomunicazioni, Liceo Classico, Liceo Artistico"
 
   utter_info_scientifico:
   - text: "Il percorso del liceo scientifico favorisce l'acquisizione delle conoscenze e dei metodi propri della matematica, della fisica e delle scienze naturali. Per saperne di più clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/liceo-scientifico-2/"
@@ -86,9 +85,6 @@ responses:
 
   utter_info_iti:
   - text: "Per entrare nel mondo delle comunicazioni e dell'informatica e capirne le norme che lo regolano e le tecnologie utilizzate. Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/informatica-e-telecomunicazioni/"
-
-  utter_info_logi:
-  - text: "Permette di approfondire la realizzazione e la conduzione dei sistemi di trasporto navali, terrestri e aerei. Per maggiori informazioni clicca sul seguente link https://www.iisbisignano.edu.it/indirizzo-di-studio/trasporti-e-logistica/"
 
   utter_info_acc:
   - text: "Per accedere alla scuola secondaria di secondo grado, dopo aver completato il ciclo di studi della scuola secondaria di primo grado, è necessario  iscriversi tramite la procedura online presente su https://www.istruzione.it/iscrizionionline. L'iscrizione alla secondaria di secondo grado viene effettuata tramite la compilazione di un modulo on line disponibile nel periodo comunicato ogni anno attraverso la circolare sulle iscrizioni che viene pubblicata di norma nel mese di novembre."

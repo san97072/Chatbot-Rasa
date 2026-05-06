@@ -159,20 +159,6 @@ nlu:
     - fai una breve descrizione del [tecnico industriale]
     - quali sono le materie che si studiano nel corso di studi dell'[itis]?
 
-
-- intent: info_logistica
-  examples: |
-    - cosa si studia all'indirizzo [trasporti e logistica]?
-    - che competenze offre il [logistico]?
-    - cosa si fa al [logistico]?
-    - puoi darmi più informazioni sull'indirizzo [logistico]?
-    - posso avere informazioni sull'[aeronautico]?
-    - in cosa consiste [trasporti e logistica]?
-    - dimmi di più sul [trasporti e logistica]
-    - dammi informazioni sul [logistico]
-    - fai una breve descrizione del [trasporti e logistica]
-    - quali sono le materie che si studiano nel corso di studi del [logistico]?
-
 - intent: info_accesso
   examples: |
     - come si [accede]?
@@ -233,7 +219,6 @@ nlu:
     - quali sono i [libri] per lo scientifico?
     - quali sono i [libri] per il classico?
     - quali sono i [libri] per l'artistico?
-    - quali sono i [libri] per il trasporto e logistica?
     - quali sono i [libri] per il tecnico?
     - quali sono i [libri] per l'informatico?
     - quali sono i [libri] per l'industriale?
@@ -312,9 +297,6 @@ nlu:
     - che materia è uscita all'industriale?
     - che materie sono uscite all'informatico?
     - che materie sono uscite all'orale all'artistico?
-    - che materia è uscita al trasporti e logistica?
-    - che materie sono uscite al logistico?
-    - che materie sono uscite all'orale al trasporti?
     - quali saranno i commissari interni?
     - quali saranno i commisari esterni?
 
@@ -418,7 +400,6 @@ nlu:
     - qual è l'orario dell'artistico?
     - qual è l'orario dell'informatico?
     - qual è l'oario dell'industriale?
-    - qual è l'orario del logistico?
     - come consultare gli orari?
     - dove posso visualizzare gli orari delle lezioni?
 
@@ -494,7 +475,6 @@ nlu:
     - quante ore si fanno al liceo scientifico?
     - quante ore si fanno al liceo classico?
     - quante ore si fanno al liceo artistico?
-    - quante ore si fanno al trasporti e logistica?
 
 
 - intent: creatori

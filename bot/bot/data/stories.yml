@@ -53,11 +53,6 @@ stories:
   - intent: info_iti
   - action: utter_info_iti
 
-- story: info_logi
-  steps:
-  - intent: info_logistica
-  - action: utter_info_logi
-
 - story: info_access
   steps:
   - intent: info_accesso
